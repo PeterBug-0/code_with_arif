@@ -1,6 +1,6 @@
-import http from "http";
-import { join, extname } from "path";
-import { readFile } from "fs";
+const http = require("http");
+const { join, extname } = require("path");
+const { readFile } = require("fs");
 
 const server = http.createServer((request, response) => {
   const url = request.url === "/" ? "/index.html" : request.url;
