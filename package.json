@@ -1,0 +1,19 @@
+{
+  "name": "code_with_arif",
+  "version": "1.0.0",
+  "description": "A node js module to check if a number is a Prime",
+  "main": "Primenumberchecker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PeterBug-0/code_with_arif.git"
+  },
+  "keywords": ["prime", "checker"],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/PeterBug-0/code_with_arif/issues"
+  },
+  "homepage": "https://github.com/PeterBug-0/code_with_arif#readme"
+}
