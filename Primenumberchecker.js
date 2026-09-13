@@ -1,17 +1,15 @@
 function isPrime(num) {
-    if (num<=1)
-        return false;
+  if (!Number.isFinite(num) || !Number.isInteger(num) || num <= 1) {
+    return false;
+  }
 
-
-for(let i=2; i*i<=num; i++ ) {
-    if(num%i === 0){
- return false;
+  for (let i = 2; i * i <= num; i++) {
+    if (num % i === 0) {
+      return false;
     }
+  }
+
+  return true;
 }
- 
-return true;
-}
 
-Module.exports = {isPrime};
-
-
+module.exports = { isPrime };
