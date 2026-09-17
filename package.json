@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node \"Assignment 2/Server.js\"",
-    "dev": "node --watch \"Assignment 2/Server.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node --watch \"Assignment 2/Server.js\""
   },
   "repository": {
     "type": "git",
@@ -18,13 +17,16 @@
     "api",
     "tasks"
   ],
-  "author": "ARIF",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/PeterBug-0/code_with_arif/issues"
   },
   "homepage": "https://github.com/PeterBug-0/code_with_arif#readme",
   "dependencies": {
-    "express": "5.2.1"
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.10.0",
+    "globals": "^17.12.0"
   }
 }
