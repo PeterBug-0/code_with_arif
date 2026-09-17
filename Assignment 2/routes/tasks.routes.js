@@ -3,40 +3,36 @@ import { Router } from 'express';
 const router = Router();
 
 // In-memory data store
-let tasks = [
+const tasks = [
   {
     id: 1,
     title: "Learn Express routing",
     completed: false,
-    createdAt:  new Date ().toISOString()
+    createdAt: new Date().toISOString()
   }
 ];
 let nextId = 2;
 
 // Middleware: Validator for POST /tasks
 const validateTaskTitle = (req, res, next) => {
-const {title} = req.body;
-if (!title || typeof title !== 'string' || title.trim() === ''){
-return res.status(400).json({ error: "Title is required and must be a non-empty string"});
-}
-nextId();
+  const { title } = req.body;
+  if (!title || typeof title !== 'string' || title.trim() === '') {
+    return res.status(400).json({ error: "Title is required and must be a non-empty string" });
+  }
+  next();
 };
-
-
-
 
 // GET /tasks - Get all tasks (supports ?completed=true/false)
 router.get('/', (req, res) => {
-const {completed} = req.query;
-if (completed !== undefined){
-const isCompleted = completed === 'true';
-const filteredTasks = tasks.filter(tasks => task.completed === isCompleted);
-return res.status(200).json({filteredTasks});
-}
+  const { completed } = req.query;
+  if (completed !== undefined) {
+    const isCompleted = completed === 'true';
+    const filteredTasks = tasks.filter(t => t.completed === isCompleted);
+    return res.status(200).json(filteredTasks);
+  }
 
-res.status(200).json({Tasks});
-})
-
+  res.status(200).json(tasks);
+});
 
 // GET /tasks/:id - Get a task by ID
 router.get('/:id', (req, res) => {
