@@ -1,19 +1,30 @@
 {
   "name": "code_with_arif",
   "version": "1.0.0",
-  "description": "A node js module to check if a number is a Prime",
-  "main": "Primenumberchecker.js",
+  "description": "Express.js Task Tracker API",
+  "main": "Assignment 2/Server.js",
+  "type": "module",
   "scripts": {
+    "start": "node \"Assignment 2/Server.js\"",
+    "dev": "node --watch \"Assignment 2/Server.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PeterBug-0/code_with_arif.git"
   },
-  "keywords": ["prime", "checker"],
-  "type": "commonjs",
+  "keywords": [
+    "express",
+    "api",
+    "tasks"
+  ],
+  "author": "ARIF",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/PeterBug-0/code_with_arif/issues"
   },
-  "homepage": "https://github.com/PeterBug-0/code_with_arif#readme"
+  "homepage": "https://github.com/PeterBug-0/code_with_arif#readme",
+  "dependencies": {
+    "express": "5.2.1"
+  }
 }
