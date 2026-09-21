@@ -1,4 +1,25 @@
+# Dependencies
 node_modules/
+
+# Environment & secrets
 .env
-*.log
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Claude Code local settings (may contain machine-specific permissions)
+.claude/
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Runtime
+*.pid

@@ -1,35 +1,31 @@
 import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import taskRouter from './routes/tasks.routes.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// 1. Middleware: JSON Parser
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const publicPath = path.join(__dirname, '..', 'public');
+
 app.use(express.json());
 
-// 2. Middleware: Custom Logger
-app.use((req, res, next) => {
-  const timestamp = new Date().toLocaleTimeString();
-  console.log(`[${req.method}] ${req.url} - ${timestamp}`);
-  next();
+// 1. Explicitly serve assignment2.html on the root route FIRST
+app.get('/', (req, res) => {
+  res.sendFile(path.join(publicPath, 'assignment2.html'));
 });
 
-// Serve static files from 'public' folder
-app.use(express.static('public'));
+// 2. Serve static assets (CSS, JS, images)
+app.use(express.static(publicPath));
 
-// Task API routes
+// API Routes
 app.use('/tasks', taskRouter);
 
-// 4. Error Handling: 404 Non-existent Routes
+// 3. Catch-all for 404s
 app.use((req, res) => {
-  res.status(404).sendFile('404.html', { root: 'public' });
-});
-
-// 4. Error Handling: Global Error Handler
-// eslint-disable-next-line no-unused-vars
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: "Internal Server Error" });
+  res.status(404).sendFile(path.join(publicPath, '404.html'));
 });
 
 app.listen(PORT, () => {
