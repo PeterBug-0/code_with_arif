@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Tracker API</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+      background-color: #0f172a;
+      color: #f8fafc;
+    }
+    h1 { color: #38bdf8; }
+    code {
+      background: #1e293b;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #f43f5e;
+    }
+    ul { padding-left: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Task Tracker API</h1>
+  
+  <h2>Available Endpoints</h2>
+  <ul>
+    <li><code>GET /tasks</code> - Fetch all tasks</li>
+    <li><code>GET /tasks?completed=true</code> - Filter tasks by status</li>
+    <li><code>GET /tasks/:id</code> - Get a task by ID</li>
+    <li><code>POST /tasks</code> - Create a new task</li>
+    <li><code>PATCH /tasks/:id</code> - Update a task</li>
+    <li><code>DELETE /tasks/:id</code> - Delete a task</li>
+  </ul>
+</body>
+</html>
