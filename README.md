@@ -10,9 +10,9 @@ Node.js, HTTP fundamentals & APIs
 - [ ] Node.js fundamentals
 - [ ] HTTP and REST APIs
 - [ ] Express.js
-- [ ] Databases
-- [ ] Authentication
-- [ ] API testing
 - [ ] Deployment
+- [ ] API testing
+- [ ] Authentication
+- [ ] Databases
 
 ### Follow the guideline in  `CONTRIBUTING.md `
